@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppFidelidade.Views.EstabelecimentoPage"
+             Title="{Binding Title}">
+    <ContentPage.Content>
+        <StackLayout Padding="5">
+            <StackLayout Padding="5" Spacing="2">
+                <SearchBar Placeholder="Pesquisar por Estabelecimento" 
+                           Text="{Binding PesquisaPorNome}" />
+            </StackLayout>
+            <ListView ItemsSource="{Binding Estabelecimentos}" 
+                      ItemTapped="LstEstabelecimento_ItemTapped" 
+                      RowHeight="110" IsPullToRefreshEnabled="True"
+                      Refreshing="OnAtualizar_Refreshing">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ContentView Padding="5">
+                                <Frame OutlineColor="#60b0f4" Padding="3">
+                                    <StackLayout Padding="1" Orientation="Horizontal">
+                                        <StackLayout>
+                                            <Image Source= "{Binding IdEstabelecimento, StringFormat='loja{0}.jpg'}" HeightRequest="80" WidthRequest="80"></Image>
+                                        </StackLayout>
+                                        
+                                        <StackLayout>                                            
+                                            <Label Text="{Binding Nome, StringFormat='Nome: {0}'}" />
+                                            <Label Text="{Binding Sobre, StringFormat='Sobre: {0}'}" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </ContentView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
