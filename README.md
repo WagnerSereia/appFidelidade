@@ -8,3 +8,5 @@ email: daniel.araujo@live.com
 senha:123456
 
 Alguns serviços estão fixos, somente para fins academicos e comprovação de utilização.
+## Parceiro
+Esse é um desenvolvimento de pesquisa e parceria com [ConnectionPharma](https://cpharma.com.br)
